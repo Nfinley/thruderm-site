@@ -1,0 +1,10 @@
+{
+ "name": "thruderm-website",
+ "version": "1.0.0",
+ "description": "thruderm site build with Vue.js",
+ "author": "Nigel Finley",
+ "private": true,
+ "scripts": {
+   "postinstall": "npm install express"
+ }
+}
