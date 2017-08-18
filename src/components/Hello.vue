@@ -1,49 +1,33 @@
 <template>
   <div class="hello">
-    <b-navbar toggleable type="light" variant="info" toggle-breakpoint="md">
+    <b-navbar toggleable type="light" variant="info" toggle-breakpoint="md" class="bg-info">
 
       <b-nav-toggle target="nav_collapse"></b-nav-toggle>
 
-      <b-navbar-brand href="#">NavBar</b-navbar-brand>
+      <b-navbar-brand href="#"><img src="../assets/thruderm.png" class="logo-icon"></b-navbar-brand>
 
       <b-collapse is-nav id="nav_collapse">
 
         <b-nav is-nav-bar>
-          <b-nav-item href="#">Link</b-nav-item>
-          <b-nav-item href="#" disabled>Disabled</b-nav-item>
         </b-nav>
 
         <!-- Right alignd nav items -->
         <b-nav is-nav-bar class="ml-auto">
 
           <b-nav-form>
-            <b-form-input size="sm" class="mr-sm-2" type="text" placeholder="Search"/>
-            <b-button size="sm" class="my-2 my-sm-0" type="submit">Search</b-button>
+            <b-nav-item href="#home" disabled>Home</b-nav-item>
+            <b-nav-item href="#store" disabled>Store</b-nav-item>
+            <b-nav-item href="#contact" disabled>Contact</b-nav-item>
           </b-nav-form>
 
-          <b-nav-item-dropdown text="Lang" right>
-            <b-dropdown-item to="#">EN</b-dropdown-item>
-            <b-dropdown-item to="#">ES</b-dropdown-item>
-            <b-dropdown-item to="#">RU</b-dropdown-item>
-            <b-dropdown-item to="#">FA</b-dropdown-item>
-          </b-nav-item-dropdown>
-
-          <b-nav-item-dropdown right>
-            <!-- Using button-content slot -->
-            <template slot="button-content">
-              <em>User</em>
-            </template>
-            <b-dropdown-item to="#">Profile</b-dropdown-item>
-            <b-dropdown-item to="#">Signout</b-dropdown-item>
-          </b-nav-item-dropdown>
         </b-nav>
 
       </b-collapse>
     </b-navbar>
 
-    <b-jumbotron header="ThruDerm" lead="Over the counter Transdermal Topical Analgesics" >
+    <b-jumbotron header="ThruDerm" lead="Over the counter Transdermal Topical Analgesics" class="jumbotron">
       <p>Have Muscle Pain?</p>
-      <b-btn variant="primary" href="#">Contact Us</b-btn>
+      <b-btn variant="primary" href="#contact">Contact Us</b-btn>
     </b-jumbotron>
 
 
@@ -92,7 +76,30 @@
           <h2> Contact </h2>
         </div>
         <div>
-          <p> Please contact kasdkfljasdlkfjalskdfjlksdjf</p>
+          <b-form>
+            <b-label for="firstName">First Name</b-label>
+            <b-form-input id="firstName">
+            </b-form-input>
+            <b-label for="lastName">Last Name</b-label>
+            <b-form-input id="lastName">
+            </b-form-input>
+            <b-label for="companyName">Company</b-label>
+            <b-form-input id="companyName">
+            </b-form-input>
+            <b-label for="message">Message</b-label>
+            <b-form-input id="message">
+            </b-form-input>
+            <b-form-fieldset
+              id="fieldset1"
+              description="Let us know your name."
+              label="Enter your name"
+              :feedback="feedback"
+              :state="state"
+            >
+              <b-form-input id="input1" :invalid="invalid" v-model="name"></b-form-input>
+            </b-form-fieldset>
+            <b-button>Submit</b-button>
+          </b-form>
         </div>
       </div>
 
@@ -162,6 +169,13 @@
     align-items: center;
     justify-content: center;
     margin-bottom: 40px;
+  }
+  .bg-info {
+    background-color: #E8E9EB !important;
+  }
+  .jumbotron {
+    background: url('../assets/temp_cover2.jpg') no-repeat fixed center;
+    opacity: 50%;
   }
 
 </style>
